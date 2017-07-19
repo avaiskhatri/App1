@@ -107,6 +107,16 @@ angular.module('app.routes', [])
     }
   })
   
+  .state('tabsController.feedback', {
+    url: '/page13',
+    views: {
+      'tab3': {
+        templateUrl: 'templates/feedback.html',
+        controller: 'feedbackCtrl'
+      }
+    }
+  })
+  
   .state('tabsController', {
     url: '/page1',
     templateUrl: 'templates/tabsController.html',
