@@ -39,6 +39,16 @@ angular.module('app.routes', [])
     }
   })
   
+  .state('tabsController.report', {
+    url: '/page14',
+    views: {
+      'tab4': {
+        templateUrl: 'templates/report.html',
+        controller: 'reportCtrl'
+      }
+    }
+  })
+  
   .state('login', {
     url: '/page7',
     templateUrl: 'templates/login.html',

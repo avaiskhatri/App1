@@ -1,34 +1,27 @@
 <ion-view title="Home" id="page2">
   <ion-nav-buttons side="right" class="has-header">
-    <button class="button icon ion-android-sync" > Sync</button>
+    <button class="button icon ion-android-sync" > Sync Now</button>
   </ion-nav-buttons>
   <ion-content padding="true" class="has-header">
-    <div class="card">
-        <div class="item item-divider">
-            Summary
-        </div>
-        <div class="item item-text-wrap">
-            <canvas id="doughnut" class="chart chart-doughnut"
-              chart-data="data" chart-labels="labels">
-            </canvas> 
-        </div>
-    </div>
+    
+    
     <ion-list id="home-list5">
+      <div class="item item-text-wrap">
+        <canvas id="doughnut" class="chart chart-doughnut"
+          chart-data="data" chart-labels="labels">
+        </canvas> 
+      </div>
       <ion-toggle toggle-class="toggle-positive" id="home-toggle2"><i class="icon ion-bluetooth"></i> Bluetooth </ion-toggle>
-      <ion-item class="item-icon-left" id="home-list-item18">
-        <i class="icon ion-alert"></i>Total Unit Consumed
-        <span class="item-note">100 Units</span>
-      </ion-item>
       <ion-item class="item-icon-left" id="home-list-item20">
         <i class="icon ion-alert"></i>Critical Device Usage:
-        <span class="item-note">50 Units</span>
+        <span class="item-note">{{ allUnits }} Units</span>
       </ion-item>
       <ion-item class="item-icon-left" id="home-list-item16">
         <i class="icon ion-ios-settings-strong"></i>Total Devices: 5
         <span class="item-note">5 Devices</span>
       </ion-item>
       <ion-item class="item-icon-left" id="home-list-item17">
-        <i class="icon ion-clock"></i>Last Synced
+        <i class="icon ion-clock"></i>Last Sync
         <span class="item-note">2 days ago</span>
       </ion-item>
     </ion-list>
