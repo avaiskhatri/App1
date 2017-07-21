@@ -4,13 +4,9 @@
   </ion-nav-buttons>
   <ion-content padding="true" class="has-header">
     
-    
+    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+    </canvas> 
     <ion-list id="home-list5">
-      <div class="item item-text-wrap">
-        <canvas id="doughnut" class="chart chart-doughnut"
-          chart-data="data" chart-labels="labels">
-        </canvas> 
-      </div>
       <ion-toggle toggle-class="toggle-positive" id="home-toggle2"><i class="icon ion-bluetooth"></i> Bluetooth </ion-toggle>
       <ion-item class="item-icon-left" id="home-list-item20">
         <i class="icon ion-alert"></i>Critical Device Usage:
