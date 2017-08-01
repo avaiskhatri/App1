@@ -61,7 +61,7 @@
     -->
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7">
   <div>
   <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
     <ion-side-menu-content>
@@ -79,7 +79,7 @@
         <div class="profile-image" data-componentid="image2">
           <img src="img/v7rupaaQaC5i0kLHEtc6_Eye.jpg" style="display: block; height: auto; margin-left: auto; margin-right: auto;">
         </div>
-        <h3 id="menu-heading1" style="color:#FFFFFF;font-weight:300;text-align:center;" data-componentid="heading1">Avais Khatri</h3>
+        <h3 id="menu-heading1" style="color:#FFFFFF;font-weight:300;text-align:center;" data-componentid="heading1"> {{ user.user_full_name }}</h3>
         <div class="spacer" data-componentid="spacer2" style="width: 268px; height: 30px;"></div>
         <ion-list id="menu-list1" data-componentid="list1">
           <ion-item class="item-icon-left side-menu-item" id="menu-list-item1" ui-sref="tabsController.profile()" menu-close="" data-componentid="list-item1">
@@ -88,7 +88,7 @@
             <i class="icon ion-ios-settings-strong"></i>My Devices</ion-item>
             <ion-item class="item-icon-left side-menu-item" id="menu-list-item2" ui-sref="tabsController.feedback()" menu-close="" data-componentid="list-item3">
             <i class="icon ion-chatbubbles"></i>Feedback</ion-item>
-          <ion-item class="item-icon-left side-menu-item" id="menu-list-item3" ui-sref="login()" menu-close="" data-componentid="list-item3">
+          <ion-item class="item-icon-left side-menu-item" id="menu-list-item3" ng-click="logout()" menu-close="" data-componentid="list-item3">
             <i class="icon ion-log-out"></i>Log Out</ion-item>
         </ion-list>
       </ion-content>

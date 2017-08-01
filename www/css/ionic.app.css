@@ -9837,5 +9837,5 @@ form.form-separator{
     text-align:center;position:absolute;right:50%;bottom:0;width:40px;height:40px;line-height:40px;background-color:#fff;margin-bottom:-20px;margin-right:-20px;color:#ff4b1f;text-transform:uppercase;
 }
 .button-at-footer{
-    position: absolute; bottom: 0; width: 100%; margin-top: 20px;
+    position: absolute; bottom: 0; display: block; margin-top: 20px; width: 97%;
 }

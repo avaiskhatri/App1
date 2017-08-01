@@ -9,13 +9,13 @@
     <div class="spacer" style="width: 300px; height: 13px;"></div>
     <ion-list id="profile-list6">
       <ion-item class="item-icon-left" id="profile-list-item13">
-        <i class="icon ion-ios-person"></i>Avais Khatri</ion-item>
+        <i class="icon ion-ios-person"></i>{{user.user_full_name}}</ion-item>
       <ion-item class="item-icon-left" id="profile-list-item14" href="tel:">
-        <i class="icon ion-ios-email"></i>avaiskhatri@hotmail.com</ion-item>
+        <i class="icon ion-ios-email"></i>{{user.user_email}}</ion-item>
       <ion-item class="item-icon-left" id="profile-list-item15">
         <i class="icon ion-ios-calendar"></i>11 December 1992</ion-item>
       <ion-item class="item-icon-left" id="profile-list-item25">
-        <i class="icon ion-ios-calendar-outline"></i>16 July 2017</ion-item>
+        <i class="icon ion-ios-calendar-outline"></i>{{user.user_registration_date}}</ion-item>
     </ion-list>
     <button id="profile-button2" class="button button-positive button-block" ui-sref="login()">Log Out</button>
   </ion-content>

@@ -50,19 +50,19 @@ angular.module('app.routes', [])
   })
   
   .state('login', {
-    url: '/page7',
+    url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
 
   .state('forgotPassword', {
-    url: '/page9',
+    url: '/forgotPassword',
     templateUrl: 'templates/forgotPassword.html',
     controller: 'forgotPasswordCtrl'
   })
 
   .state('register', {
-    url: '/page8',
+    url: '/register',
     templateUrl: 'templates/register.html',
     controller: 'registerCtrl'
   })
