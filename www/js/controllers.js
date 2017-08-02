@@ -85,11 +85,40 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('changePasswordCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('changePasswordCtrl', ['$scope', '$state', '$http', '$log', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
+function ($scope, $state, $http, $log) {
+    $scope.changePasswordData = [];
+    $scope.updatePassword = function(changePasswordData){
+        if( angular.isDefined(changePasswordData.password) && angular.isDefined(changePasswordData.confirmPassword) ){
+            if(changePasswordData.password.length == 0 || changePasswordData.confirmPassword == 0){
+                $scope.showPopup("Error !","Both fields are required.");
+            }else if(changePasswordData.password != changePasswordData.confirmPassword){
+                $scope.showPopup("Error !","Both passwords must match.");
+            }else{
+                $scope.showLoading();
+                $http({
+                    method: 'POST',
+                    url: $scope.apiServerPath +'/changePassword',
+                    data: { userPassword : changePasswordData.password, userId : $scope.user.user_id }
+                }).then(function successCallback(response){
+                    if(response.data.error){
+                        $scope.hideLoading();
+                        $scope.showPopup("Error !",response.data.error.text);
+                    }else{
+                        $scope.showLoading('You have successfully changed password',1);
+                        $state.go('tabsController.settings',{reload: true});
+                    }
+                },function errorCallback(response){
+                    $scope.hideLoading();
+                    $scope.showPopup("Error !",JSON.stringify(response.data));
+                });
+            }
+        }else{
+            $scope.showPopup("Error !","Both fields are required.");
+        }
+    }
 
 }])
 
@@ -135,10 +164,10 @@ function ($scope, $state, AuthService) {
 
                 $scope.hideLoading(1);
             }else{
-                $scope.showPopup("Login Failed !","Both feilds are required.");
+                $scope.showPopup("Login Failed !","Both fields are required.");
             }
         }else{
-            $scope.showPopup("Login Failed !","Both feilds are required.");
+            $scope.showPopup("Login Failed !","Both fields are required.");
         }
     };
     
@@ -220,6 +249,8 @@ function ($scope, $state, $http, $log) {
 .controller('AppCtrl',function($state, $http, $rootScope, $location, $ionicPopup, $ionicLoading, $timeout, $interval, AuthService){
     
     $rootScope.apiServerPath = AuthService.apiServerPath();
+    $rootScope.user = AuthService.User();
+    
     $rootScope.storeUserCredentials = function(data){
         //console.log(data);
         AuthService.storeUserCredentials(data);

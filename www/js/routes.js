@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
 
       .state('tabsController.home', {
-    url: '/page2',
+    url: '/home',
     views: {
       'tab1': {
         templateUrl: 'templates/home.html',
@@ -68,7 +68,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.settings', {
-    url: '/page4',
+    url: '/settings',
     views: {
       'tab3': {
         templateUrl: 'templates/settings.html',
@@ -78,7 +78,7 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.profile', {
-    url: '/page5',
+    url: '/profile',
     views: {
       'tab3': {
         templateUrl: 'templates/profile.html',
@@ -86,7 +86,17 @@ angular.module('app.routes', [])
       }
     }
   })
-
+  
+  .state('tabsController.editProfile', {
+    url: '/editProfile',
+    views: {
+      'tab3': {
+        templateUrl: 'templates/editProfile.html',
+        controller: 'editProfileCtrl'
+      }
+    }
+  })
+  
   .state('tabsController.aboutUs', {
     url: '/page11',
     views: {
@@ -97,18 +107,10 @@ angular.module('app.routes', [])
     }
   })
   
-  .state('tabsController.editProfile', {
-    url: '/page6',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/editProfile.html',
-        controller: 'editProfileCtrl'
-      }
-    }
-  })
+  
   
   .state('tabsController.changePassword', {
-    url: '/page12',
+    url: '/changePassword',
     views: {
       'tab3': {
         templateUrl: 'templates/changePassword.html',
@@ -133,7 +135,7 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-$urlRouterProvider.otherwise('/page7')
+$urlRouterProvider.otherwise('/login')
 
 
 });

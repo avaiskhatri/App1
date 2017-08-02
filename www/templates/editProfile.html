@@ -11,15 +11,15 @@
       <div class="spacer" style="width: 300px; height: 13px;"></div>
       <label class="item item-input item-stacked-label" id="editProfile-input7" name="userName">
         <span class="input-label">Name</span>
-        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Full Name" ng-model="profileEditData.userFullName">
       </label>
       <label class="item item-input item-stacked-label" id="editProfile-input3" name="userEmail">
         <span class="input-label">Email</span>
-        <input type="email" placeholder="Email Address">
+        <input type="email" placeholder="Email Address" ng-model="profileEditData.userEmail">
       </label>
       <label class="item item-input item-stacked-label" id="editProfile-input2" name="userDOB">
         <span class="input-label">DOB</span>
-        <input type="date" placeholder="Date of Birth">
+        <input type="date" placeholder="Date of Birth" ng-model="profileEditData.userDOB" >
       </label>
     </form>
     <ion-list id="editProfile-list7">
